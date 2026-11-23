@@ -1,0 +1,632 @@
+[
+  {
+    "id": 1,
+    "pacienteId": 12,
+    "fecha": "2026-10-11",
+    "valorTotal": 370000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 2,
+    "pacienteId": 13,
+    "fecha": "2026-10-26",
+    "valorTotal": 1350000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 3,
+    "pacienteId": 27,
+    "fecha": "2026-10-28",
+    "valorTotal": 1480000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 4,
+    "pacienteId": 5,
+    "fecha": "2026-10-06",
+    "valorTotal": 530000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 5,
+    "pacienteId": 1,
+    "fecha": "2026-10-10",
+    "valorTotal": 1150000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 6,
+    "pacienteId": 20,
+    "fecha": "2026-11-11",
+    "valorTotal": 210000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 7,
+    "pacienteId": 13,
+    "fecha": "2026-10-26",
+    "valorTotal": 340000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 8,
+    "pacienteId": 15,
+    "fecha": "2026-10-11",
+    "valorTotal": 360000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 9,
+    "pacienteId": 1,
+    "fecha": "2026-11-06",
+    "valorTotal": 460000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 10,
+    "pacienteId": 13,
+    "fecha": "2026-10-10",
+    "valorTotal": 720000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 11,
+    "pacienteId": 28,
+    "fecha": "2026-11-01",
+    "valorTotal": 1270000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 12,
+    "pacienteId": 11,
+    "fecha": "2026-10-17",
+    "valorTotal": 1300000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 13,
+    "pacienteId": 1,
+    "fecha": "2026-10-14",
+    "valorTotal": 1430000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 14,
+    "pacienteId": 12,
+    "fecha": "2026-10-11",
+    "valorTotal": 990000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 15,
+    "pacienteId": 20,
+    "fecha": "2026-10-13",
+    "valorTotal": 690000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 16,
+    "pacienteId": 1,
+    "fecha": "2026-10-18",
+    "valorTotal": 1280000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 17,
+    "pacienteId": 4,
+    "fecha": "2026-10-15",
+    "valorTotal": 1280000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 18,
+    "pacienteId": 21,
+    "fecha": "2026-10-23",
+    "valorTotal": 290000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 19,
+    "pacienteId": 13,
+    "fecha": "2026-11-15",
+    "valorTotal": 590000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 20,
+    "pacienteId": 26,
+    "fecha": "2026-11-10",
+    "valorTotal": 930000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 21,
+    "pacienteId": 6,
+    "fecha": "2026-10-11",
+    "valorTotal": 400000,
+    "estado": "ANULADA"
+  },
+  {
+    "id": 22,
+    "pacienteId": 20,
+    "fecha": "2026-11-08",
+    "valorTotal": 1290000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 23,
+    "pacienteId": 1,
+    "fecha": "2026-11-11",
+    "valorTotal": 340000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 24,
+    "pacienteId": 9,
+    "fecha": "2026-10-14",
+    "valorTotal": 820000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 25,
+    "pacienteId": 24,
+    "fecha": "2026-10-23",
+    "valorTotal": 1250000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 26,
+    "pacienteId": 25,
+    "fecha": "2026-10-12",
+    "valorTotal": 90000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 27,
+    "pacienteId": 5,
+    "fecha": "2026-10-31",
+    "valorTotal": 380000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 28,
+    "pacienteId": 18,
+    "fecha": "2026-10-04",
+    "valorTotal": 710000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 29,
+    "pacienteId": 4,
+    "fecha": "2026-11-02",
+    "valorTotal": 1230000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 30,
+    "pacienteId": 15,
+    "fecha": "2026-11-02",
+    "valorTotal": 1440000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 31,
+    "pacienteId": 7,
+    "fecha": "2026-10-29",
+    "valorTotal": 430000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 32,
+    "pacienteId": 8,
+    "fecha": "2026-10-28",
+    "valorTotal": 260000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 33,
+    "pacienteId": 5,
+    "fecha": "2026-10-17",
+    "valorTotal": 430000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 34,
+    "pacienteId": 6,
+    "fecha": "2026-11-12",
+    "valorTotal": 650000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 35,
+    "pacienteId": 14,
+    "fecha": "2026-10-13",
+    "valorTotal": 990000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 36,
+    "pacienteId": 13,
+    "fecha": "2026-10-22",
+    "valorTotal": 1400000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 37,
+    "pacienteId": 4,
+    "fecha": "2026-10-06",
+    "valorTotal": 750000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 38,
+    "pacienteId": 27,
+    "fecha": "2026-10-28",
+    "valorTotal": 740000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 39,
+    "pacienteId": 3,
+    "fecha": "2026-10-18",
+    "valorTotal": 220000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 40,
+    "pacienteId": 21,
+    "fecha": "2026-10-06",
+    "valorTotal": 740000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 41,
+    "pacienteId": 15,
+    "fecha": "2026-10-01",
+    "valorTotal": 940000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 42,
+    "pacienteId": 17,
+    "fecha": "2026-11-15",
+    "valorTotal": 690000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 43,
+    "pacienteId": 21,
+    "fecha": "2026-10-20",
+    "valorTotal": 1430000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 44,
+    "pacienteId": 12,
+    "fecha": "2026-10-02",
+    "valorTotal": 720000,
+    "estado": "ANULADA"
+  },
+  {
+    "id": 45,
+    "pacienteId": 16,
+    "fecha": "2026-10-16",
+    "valorTotal": 1220000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 46,
+    "pacienteId": 10,
+    "fecha": "2026-11-14",
+    "valorTotal": 630000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 47,
+    "pacienteId": 12,
+    "fecha": "2026-10-04",
+    "valorTotal": 410000,
+    "estado": "ANULADA"
+  },
+  {
+    "id": 48,
+    "pacienteId": 9,
+    "fecha": "2026-10-28",
+    "valorTotal": 490000,
+    "estado": "ANULADA"
+  },
+  {
+    "id": 49,
+    "pacienteId": 13,
+    "fecha": "2026-11-02",
+    "valorTotal": 800000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 50,
+    "pacienteId": 1,
+    "fecha": "2026-10-17",
+    "valorTotal": 1010000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 51,
+    "pacienteId": 12,
+    "fecha": "2026-10-12",
+    "valorTotal": 80000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 52,
+    "pacienteId": 9,
+    "fecha": "2026-11-02",
+    "valorTotal": 590000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 53,
+    "pacienteId": 2,
+    "fecha": "2026-10-26",
+    "valorTotal": 130000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 54,
+    "pacienteId": 13,
+    "fecha": "2026-10-21",
+    "valorTotal": 1340000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 55,
+    "pacienteId": 5,
+    "fecha": "2026-11-03",
+    "valorTotal": 1370000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 56,
+    "pacienteId": 21,
+    "fecha": "2026-10-24",
+    "valorTotal": 340000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 57,
+    "pacienteId": 18,
+    "fecha": "2026-11-13",
+    "valorTotal": 700000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 58,
+    "pacienteId": 26,
+    "fecha": "2026-10-05",
+    "valorTotal": 1360000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 59,
+    "pacienteId": 17,
+    "fecha": "2026-10-05",
+    "valorTotal": 1290000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 60,
+    "pacienteId": 9,
+    "fecha": "2026-10-16",
+    "valorTotal": 600000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 61,
+    "pacienteId": 3,
+    "fecha": "2026-10-31",
+    "valorTotal": 810000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 62,
+    "pacienteId": 20,
+    "fecha": "2026-10-10",
+    "valorTotal": 920000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 63,
+    "pacienteId": 9,
+    "fecha": "2026-11-13",
+    "valorTotal": 330000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 64,
+    "pacienteId": 18,
+    "fecha": "2026-10-13",
+    "valorTotal": 870000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 65,
+    "pacienteId": 15,
+    "fecha": "2026-10-18",
+    "valorTotal": 1070000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 66,
+    "pacienteId": 24,
+    "fecha": "2026-11-03",
+    "valorTotal": 750000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 67,
+    "pacienteId": 27,
+    "fecha": "2026-11-10",
+    "valorTotal": 1380000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 68,
+    "pacienteId": 12,
+    "fecha": "2026-10-15",
+    "valorTotal": 1350000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 69,
+    "pacienteId": 16,
+    "fecha": "2026-11-13",
+    "valorTotal": 1230000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 70,
+    "pacienteId": 1,
+    "fecha": "2026-10-21",
+    "valorTotal": 940000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 71,
+    "pacienteId": 7,
+    "fecha": "2026-11-15",
+    "valorTotal": 110000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 72,
+    "pacienteId": 13,
+    "fecha": "2026-11-07",
+    "valorTotal": 270000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 73,
+    "pacienteId": 4,
+    "fecha": "2026-10-04",
+    "valorTotal": 810000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 74,
+    "pacienteId": 9,
+    "fecha": "2026-10-28",
+    "valorTotal": 1380000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 75,
+    "pacienteId": 2,
+    "fecha": "2026-10-27",
+    "valorTotal": 1230000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 76,
+    "pacienteId": 28,
+    "fecha": "2026-10-19",
+    "valorTotal": 1320000,
+    "estado": "ANULADA"
+  },
+  {
+    "id": 77,
+    "pacienteId": 5,
+    "fecha": "2026-10-11",
+    "valorTotal": 1280000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 78,
+    "pacienteId": 21,
+    "fecha": "2026-10-16",
+    "valorTotal": 850000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 79,
+    "pacienteId": 1,
+    "fecha": "2026-11-05",
+    "valorTotal": 2500000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 80,
+    "pacienteId": 27,
+    "fecha": "2026-11-02",
+    "valorTotal": 400000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 81,
+    "pacienteId": 17,
+    "fecha": "2026-11-02",
+    "valorTotal": 300000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 82,
+    "pacienteId": 19,
+    "fecha": "2026-11-02",
+    "valorTotal": 400000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 83,
+    "pacienteId": 9,
+    "fecha": "2026-11-02",
+    "valorTotal": 300000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 84,
+    "pacienteId": 16,
+    "fecha": "2026-11-02",
+    "valorTotal": 400000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 85,
+    "pacienteId": 12,
+    "fecha": "2026-11-02",
+    "valorTotal": 300000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 86,
+    "pacienteId": 26,
+    "fecha": "2026-11-02",
+    "valorTotal": 400000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 87,
+    "pacienteId": 16,
+    "fecha": "2026-11-02",
+    "valorTotal": 300000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 88,
+    "pacienteId": 3,
+    "fecha": "2026-11-10",
+    "valorTotal": 200000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 89,
+    "pacienteId": 4,
+    "fecha": "2026-11-10",
+    "valorTotal": 100000,
+    "estado": "EMITIDA"
+  },
+  {
+    "id": 90,
+    "pacienteId": 5,
+    "fecha": "2026-11-10",
+    "valorTotal": 900000,
+    "estado": "ANULADA"
+  }
+]

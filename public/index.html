@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caja · Facturación y pagos</title>
+<style>
+  :root {
+    --tinta:#0F2430; --tinta-2:#183645; --mar:#0B5D56; --mar-claro:#DDEDEA; --laton:#B7893A; --laton-claro:#F6EEDD;
+    --niebla:#EEF2F1; --papel:#FFFFFF; --linea:#DCE3E2; --texto:#16252E; --suave:#62747C; --granate:#A4302A; --granate-claro:#F8E7E5;
+    --serif: "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    --sans: "Segoe UI Variable","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  }
+  * { box-sizing:border-box; }
+  html { color-scheme: light; }
+  body { margin:0; font:14.5px/1.5 var(--sans); color:var(--texto); background:var(--niebla); }
+  button, input, select { font:inherit; color:inherit; }
+  :focus-visible { outline:2px solid var(--mar); outline-offset:2px; border-radius:4px; }
+
+  .app { display:grid; grid-template-columns: 232px minmax(0,1fr); min-height:100vh; }
+  /* ---------- barra lateral ---------- */
+  aside { background:var(--tinta); color:#cfdcdf; padding:22px 18px; display:flex; flex-direction:column; gap:28px; position:sticky; top:0; height:100vh; }
+  .marca { display:flex; align-items:center; gap:11px; }
+  .marca svg { flex:none; }
+  .marca b { display:block; font:600 19px/1.1 var(--serif); color:#fff; letter-spacing:.01em; }
+  .marca small { color:#8fa6ad; font-size:12px; }
+  nav a { display:flex; align-items:center; gap:10px; padding:9px 12px; border-radius:8px; color:#fff; background:var(--tinta-2); text-decoration:none; font-weight:600; }
+  nav a i { width:7px; height:7px; border-radius:50%; background:var(--laton); }
+  .fecha { margin-top:auto; border-top:1px solid #23414f; padding-top:14px; font-size:12.5px; color:#8fa6ad; }
+  .fecha b { display:block; color:#e6eef0; font:500 15px/1.3 var(--serif); }
+
+  /* ---------- contenido ---------- */
+  .contenido { padding:26px 30px 40px; min-width:0; }
+  h1 { margin:0; font:600 28px/1.15 var(--serif); letter-spacing:-.005em; }
+  .sub { color:var(--suave); margin:2px 0 20px; }
+
+  .franja { display:grid; grid-template-columns:repeat(4,1fr); background:var(--papel); border:1px solid var(--linea); border-radius:12px; margin-bottom:18px; }
+  .franja div { padding:14px 18px; border-left:1px solid var(--linea); min-width:0; }
+  .franja div:first-child { border-left:0; }
+  .franja small { color:var(--suave); font-size:12.5px; }
+  .franja b { display:block; font:600 22px/1.25 var(--serif); font-variant-numeric:lining-nums tabular-nums; white-space:nowrap; }
+  .franja .cobrar b { color:var(--laton); }
+
+  .cols { display:grid; grid-template-columns:minmax(0,1.12fr) minmax(0,1fr); gap:18px; align-items:start; }
+
+  .panel { background:var(--papel); border:1px solid var(--linea); border-radius:12px; }
+  .panel-cab { padding:14px 16px 12px; border-bottom:1px solid var(--linea); display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+  .panel-cab h2 { margin:0 auto 0 0; font:600 18px/1.2 var(--serif); }
+  .campo { border:1px solid var(--linea); border-radius:8px; background:var(--papel); padding:7px 11px; min-width:0; }
+  .campo:hover { border-color:#b9c7c6; }
+  #buscar { width:210px; max-width:100%; }
+
+  .tabla { max-height:calc(100vh - 292px); min-height:320px; overflow:auto; }
+  table { width:100%; border-collapse:collapse; }
+  th { position:sticky; top:0; background:var(--papel); text-align:left; font-weight:600; font-size:12.5px; color:var(--suave); padding:9px 12px; border-bottom:1px solid var(--linea); z-index:1; }
+  td { padding:10px 12px; border-bottom:1px solid #edf1f0; vertical-align:middle; }
+  .num { text-align:right; font-variant-numeric:lining-nums tabular-nums; white-space:nowrap; }
+  tr.fila { cursor:pointer; transition:background .12s; }
+  tr.fila:hover { background:#f6f9f8; }
+  tr.fila.sel { background:var(--mar-claro); box-shadow: inset 3px 0 0 var(--mar); }
+  tr.fila td:first-child { color:var(--suave); font-variant-numeric:tabular-nums; width:48px; }
+  .pac b { font-weight:600; }
+  .eps { color:var(--suave); font-size:12.5px; display:block; line-height:1.2; }
+  .avance { height:4px; border-radius:2px; background:#e6ecea; margin-top:5px; overflow:hidden; width:100%; max-width:130px; }
+  .avance i { display:block; height:100%; background:var(--mar); border-radius:2px; transition:width .5s cubic-bezier(.2,.7,.2,1); }
+  .saldo-cero { color:var(--mar); font-weight:600; }
+  .anulada td { color:#8a9aa0; }
+  .anulada .pac b { text-decoration:line-through; text-decoration-color:#b8c4c8; }
+
+  .estado { display:inline-flex; align-items:center; gap:6px; font-size:13px; white-space:nowrap; }
+  .estado::before { content:""; width:7px; height:7px; border-radius:50%; background:var(--mar); }
+  .estado.anulada::before, .estado.reversado::before { background:var(--granate); }
+  .estado.anulada, .estado.reversado { color:var(--granate); }
+
+  /* ---------- hoja de la factura ---------- */
+  .hoja { padding:0; overflow:hidden; position:sticky; top:18px; }
+  .hoja-vacia { padding:46px 28px; text-align:center; color:var(--suave); }
+  .hoja-vacia svg { margin-bottom:10px; opacity:.55; }
+  .hoja-vacia b { display:block; font:600 18px/1.3 var(--serif); color:var(--texto); margin-bottom:4px; }
+  .hoja-cab { padding:20px 24px 4px; }
+  .hoja-cab .t { display:flex; justify-content:space-between; gap:12px; align-items:baseline; }
+  .hoja-cab h2 { margin:0; font:600 24px/1.2 var(--serif); }
+  .hoja-cab p { margin:3px 0 0; color:var(--suave); }
+  .saldo { padding:16px 24px 6px; }
+  .saldo small { color:var(--suave); }
+  .saldo .cifra { font:600 44px/1.1 var(--serif); font-variant-numeric:lining-nums tabular-nums; letter-spacing:-.01em; }
+  .saldo .cifra.cero { color:var(--mar); }
+  .saldo .cifra.debe { color:var(--laton); }
+  .barra { height:8px; background:#e6ecea; border-radius:4px; margin:12px 0 6px; overflow:hidden; }
+  .barra i { display:block; height:100%; background:var(--mar); border-radius:4px; width:0; transition:width .6s cubic-bezier(.2,.7,.2,1); }
+  .barra-pie { display:flex; justify-content:space-between; color:var(--suave); font-size:13px; font-variant-numeric:tabular-nums; }
+  .corte { border:0; border-top:1.5px dashed #c9d4d3; margin:18px 0 0; position:relative; }
+  .hoja-sec { padding:16px 24px; }
+  .hoja-sec h3 { margin:0 0 8px; font:600 16px/1.2 var(--serif); }
+  .hoja-sec table td, .hoja-sec table th { padding:8px 6px; }
+  tr.rev td { color:#97a5aa; }
+  tr.rev .num { text-decoration:line-through; }
+  tr.nuevo { animation: entra .9s ease-out; }
+  @keyframes entra { from { background:#fff4d6; } to { background:transparent; } }
+  .reversar { border:0; background:none; color:var(--suave); cursor:pointer; padding:3px 8px; border-radius:6px; font-size:13px; text-decoration:underline; text-decoration-color:#c0cccb; text-underline-offset:3px; }
+  .reversar:hover { color:var(--granate); background:var(--granate-claro); text-decoration-color:transparent; }
+  .sin-pagos { color:var(--suave); padding:6px 0 2px; }
+
+  form { display:grid; grid-template-columns:1fr 1fr; gap:12px 14px; }
+  form .ancho { grid-column:1 / -1; }
+  label { display:block; font-size:13px; font-weight:600; margin-bottom:4px; }
+  label small { font-weight:400; color:var(--suave); }
+  form input { width:100%; }
+  .ayuda { display:block; color:var(--suave); font-size:12.5px; margin-top:4px; }
+  .btn { background:var(--mar); color:#fff; border:0; border-radius:9px; padding:11px 18px; font-weight:600; cursor:pointer; transition:background .15s, transform .05s; }
+  .btn:hover { background:#094b45; }
+  .btn:active { transform:translateY(1px); }
+  #aviso { margin:0 24px 20px; padding:10px 14px; border-radius:9px; display:none; font-size:14px; }
+  #aviso.ok { display:block; background:var(--mar-claro); color:#08433e; }
+  #aviso.err { display:block; background:var(--granate-claro); color:var(--granate); }
+
+  @media (max-width: 1100px) { .cols { grid-template-columns:minmax(0,1fr); } .hoja { position:static; } .tabla { max-height:420px; } }
+  @media (max-width: 860px) {
+    .app { grid-template-columns:1fr; }
+    aside { position:static; height:auto; flex-direction:row; align-items:center; padding:12px 16px; gap:16px; }
+    nav, .fecha { display:none; }
+    .contenido { padding:18px 14px 30px; }
+    .franja { grid-template-columns:1fr 1fr; }
+    .franja div:nth-child(3) { border-left:0; } .franja div:nth-child(n+3) { border-top:1px solid var(--linea); }
+    form { grid-template-columns:1fr; }
+    #buscar { flex:1 1 100%; width:100%; }
+    .panel-cab h2 { flex:1 1 100%; }
+  }
+  @media (max-width: 600px) {
+    th:nth-child(3), td:nth-child(3) { display:none; }
+    .hoja-sec table th:nth-child(3), .hoja-sec table td:nth-child(3) { display:table-cell; }
+    .hoja-cab, .saldo, .hoja-sec { padding-left:16px; padding-right:16px; }
+    #aviso { margin-left:16px; margin-right:16px; }
+    .saldo .cifra { font-size:36px; }
+    .hoja-sec { overflow-x:auto; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition:none !important; animation:none !important; } }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside>
+    <div class="marca">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#0B5D56"/><path d="M14 8h6v6h6v6h-6v6h-6v-6H8v-6h6z" fill="#fff"/></svg>
+      <div><b>Caja</b><small>Facturación y pagos</small></div>
+    </div>
+    <nav><a href="/" aria-current="page"><i></i>Facturas</a></nav>
+    <div class="fecha">Hoy<b>Lunes 16 de noviembre</b></div>
+  </aside>
+
+  <div class="contenido">
+    <h1>Facturas</h1>
+    <p class="sub">Consulta el estado de cada cuenta, registra abonos y reversa pagos.</p>
+
+    <div class="franja" id="franja"></div>
+
+    <div class="cols">
+      <section class="panel">
+        <div class="panel-cab">
+          <h2>Todas las facturas</h2>
+          <input id="buscar" class="campo" placeholder="Factura o paciente" aria-label="Buscar factura">
+          <select id="filtro" class="campo" aria-label="Filtrar"><option value="todas">Todas</option><option value="saldo">Con saldo</option></select>
+        </div>
+        <div class="tabla"><table>
+          <thead><tr><th>N.º</th><th>Paciente</th><th>Estado</th><th class="num">Total</th><th class="num">Saldo</th></tr></thead>
+          <tbody id="lista"></tbody>
+        </table></div>
+      </section>
+
+      <section class="panel hoja" id="detalle" aria-live="polite">
+        <div class="hoja-vacia">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#0F2430" stroke-width="1.6" aria-hidden="true"><path d="M11 5h22v34l-4-3-3.5 3-3.5-3-3.5 3-3.5-3-4 3z"/><path d="M16 14h12M16 21h12M16 28h7"/></svg>
+          <b>Elige una factura</b>
+          Verás sus pagos y podrás registrar un abono.
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<script>
+const pesos = n => "$ " + Number(n).toLocaleString("es-CO");
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[c]));
+let facturas = [], seleccion = null, ultimoPago = null;
+
+async function api(ruta, opciones) {
+  const r = await fetch(ruta, opciones);
+  const j = await r.json();
+  if (!r.ok) throw new Error(j.error || "Error");
+  return j;
+}
+const pct = (pag, tot) => tot > 0 ? Math.max(0, Math.min(100, Math.round(100 * pag / tot))) : 0;
+
+async function cargar() {
+  facturas = await api("/api/facturas");
+  pintarFranja(); pintarLista();
+  if (seleccion) await abrir(seleccion, true);
+}
+function pintarFranja() {
+  const em = facturas.filter(f => f.estado === "EMITIDA");
+  const facturado = em.reduce((s, f) => s + f.valorTotal, 0);
+  const recaudado = em.reduce((s, f) => s + f.pagado, 0);
+  const porCobrar = em.reduce((s, f) => s + Math.max(0, f.saldo), 0);
+  $("franja").innerHTML = `
+    <div><small>Facturas emitidas</small><b>${em.length}</b></div>
+    <div><small>Facturado</small><b>${pesos(facturado)}</b></div>
+    <div><small>Recaudado</small><b>${pesos(recaudado)}</b></div>
+    <div class="cobrar"><small>Por cobrar</small><b>${pesos(porCobrar)}</b></div>`;
+}
+function pintarLista() {
+  const q = $("buscar").value.trim().toLowerCase();
+  const soloSaldo = $("filtro").value === "saldo";
+  const filas = facturas.filter(f => (!soloSaldo || (f.estado === "EMITIDA" && f.saldo > 0)) &&
+      (!q || String(f.id) === q || f.paciente.toLowerCase().includes(q)));
+  $("lista").innerHTML = filas.length ? filas.map(f => {
+    const anulada = f.estado === "ANULADA";
+    const saldo = anulada ? "—" : (f.saldo === 0 ? `<span class="saldo-cero">Al día</span>` : pesos(f.saldo));
+    return `<tr class="fila ${anulada ? "anulada" : ""} ${f.id === seleccion ? "sel" : ""}" data-id="${f.id}" tabindex="0">
+      <td>${f.id}</td>
+      <td class="pac"><b>${esc(f.paciente)}</b>${f.eps ? `<span class="eps">${esc(f.eps)}</span>` : ""}
+        ${anulada ? "" : `<div class="avance" title="${pct(f.pagado, f.valorTotal)}% pagado"><i style="width:${pct(f.pagado, f.valorTotal)}%"></i></div>`}</td>
+      <td><span class="estado ${f.estado.toLowerCase()}">${f.estado === "EMITIDA" ? "Emitida" : "Anulada"}</span></td>
+      <td class="num">${pesos(f.valorTotal)}</td><td class="num">${saldo}</td></tr>`;
+  }).join("") : `<tr><td colspan="5" style="padding:30px;text-align:center;color:var(--suave)">Ninguna factura coincide con la búsqueda.</td></tr>`;
+  document.querySelectorAll("tr.fila").forEach(tr => {
+    tr.onclick = () => { ultimoPago = null; abrir(Number(tr.dataset.id)); };
+    tr.onkeydown = e => { if (e.key === "Enter") tr.onclick(); };
+  });
+}
+async function abrir(id, conservarAviso) {
+  seleccion = id;
+  const f = await api("/api/facturas/" + id);
+  const aviso = conservarAviso && $("aviso") ? $("aviso").outerHTML : "";
+  const emitida = f.estado === "EMITIDA";
+  const p = pct(f.pagado, f.valorTotal);
+  const claseSaldo = !emitida ? "" : (f.saldo === 0 ? "cero" : "debe");
+  $("detalle").innerHTML = `
+    <div class="hoja-cab">
+      <div class="t"><h2>Factura ${f.id}</h2><span class="estado ${f.estado.toLowerCase()}">${emitida ? "Emitida" : "Anulada"}</span></div>
+      <p>${esc(f.paciente)}${f.eps ? ` · ${esc(f.eps)}` : ""} · emitida el ${f.fecha}</p>
+    </div>
+    <div class="saldo">
+      <small>${emitida ? (f.saldo === 0 ? "La factura está al día" : "Saldo por cobrar") : "Factura anulada"}</small>
+      <div class="cifra ${claseSaldo}">${pesos(f.saldo)}</div>
+      <div class="barra" role="img" aria-label="${p}% pagado"><i id="barra" style="width:0"></i></div>
+      <div class="barra-pie"><span>Pagado ${pesos(f.pagado)}</span><span>Total ${pesos(f.valorTotal)}</span></div>
+    </div>
+    <hr class="corte">
+    <div class="hoja-sec">
+      <h3>Pagos</h3>
+      ${f.pagos.length ? `<table><thead><tr><th>N.º</th><th>Fecha</th><th>Método</th><th class="num">Valor</th><th>Estado</th><th></th></tr></thead><tbody>
+        ${f.pagos.map(x => `<tr class="${x.estado === "REVERSADO" ? "rev" : ""} ${x.id === ultimoPago ? "nuevo" : ""}">
+          <td>${x.id}</td><td>${x.fecha}</td><td>${esc(x.metodo) || "—"}</td><td class="num">${pesos(x.valor)}</td>
+          <td><span class="estado ${esc(x.estado).toLowerCase()}">${x.estado === "APLICADO" ? "Aplicado" : (x.estado === "REVERSADO" ? "Reversado" : esc(x.estado))}</span></td>
+          <td>${x.estado === "APLICADO" ? `<button class="reversar" data-rev="${x.id}">Reversar</button>` : ""}</td></tr>`).join("")}
+        </tbody></table>` : `<div class="sin-pagos">Esta factura todavía no tiene pagos.</div>`}
+    </div>
+    ${emitida ? `<hr class="corte" style="margin:0">
+    <div class="hoja-sec"><h3>Registrar abono</h3>
+      <form id="abono">
+        <div><label for="valor">Valor del abono</label><input id="valor" class="campo" name="valor" placeholder="1.500.000" autocomplete="off" required><small class="ayuda">Escríbelo como aparece en el recibo.</small></div>
+        <div><label for="metodo">Método de pago</label><input id="metodo" class="campo" name="metodo" list="metodos" value="Efectivo" required>
+          <datalist id="metodos"><option>Efectivo</option><option>Tarjeta</option><option>Transferencia</option><option>Nequi</option></datalist></div>
+        <div class="ancho"><label for="fecha">Fecha del pago</label><input id="fecha" class="campo" name="fecha" type="date" value="2026-11-16" required></div>
+        <div class="ancho"><button class="btn" type="submit">Registrar abono</button></div>
+      </form></div>` : ""}
+    <div id="aviso"></div>`;
+  if (aviso) $("aviso").outerHTML = aviso;
+  requestAnimationFrame(() => { const b = $("barra"); if (b) b.style.width = p + "%"; });
+  const form = $("abono");
+  if (form) form.onsubmit = async e => {
+    e.preventDefault();
+    const d = Object.fromEntries(new FormData(form));
+    try {
+      const r = await api("/api/abonar", { method:"POST", headers:{ "Content-Type":"application/json" }, body: JSON.stringify({ facturaId: id, ...d }) });
+      ultimoPago = r.pagoId;
+      await cargar(); mostrar("ok", `Abono ${r.pagoId} registrado. Nuevo saldo: ${pesos(r.saldo)}`);
+    } catch (err) { mostrar("err", err.message); }
+  };
+  document.querySelectorAll("[data-rev]").forEach(b => b.onclick = async () => {
+    try { await api("/api/reversar", { method:"POST", headers:{ "Content-Type":"application/json" }, body: JSON.stringify({ pagoId: Number(b.dataset.rev) }) });
+      ultimoPago = null; await cargar(); mostrar("ok", `Pago ${b.dataset.rev} reversado`); }
+    catch (err) { mostrar("err", err.message); }
+  });
+}
+function mostrar(tipo, texto) { const a = $("aviso"); if (a) { a.className = tipo; a.textContent = texto; } }
+$("buscar").oninput = pintarLista; $("filtro").onchange = pintarLista;
+cargar();
+</script>
+</body>
+</html>

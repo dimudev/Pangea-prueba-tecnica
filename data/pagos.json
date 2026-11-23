@@ -1,0 +1,786 @@
+[
+  {
+    "id": 1,
+    "facturaId": 1,
+    "fecha": "2026-10-13",
+    "valor": 185000,
+    "metodo": "Tarjeta",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 2,
+    "facturaId": 2,
+    "fecha": "2026-10-30",
+    "valor": 1350000,
+    "metodo": "Transferencia",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 3,
+    "facturaId": 3,
+    "fecha": "2026-10-30",
+    "valor": 1480000,
+    "metodo": "nequi",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 4,
+    "facturaId": 4,
+    "fecha": "2026-10-06",
+    "valor": 265000,
+    "metodo": "NEQUI",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 5,
+    "facturaId": 4,
+    "fecha": "2026-10-10",
+    "valor": 132000,
+    "metodo": "TRANSFERENCIA",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 6,
+    "facturaId": 5,
+    "fecha": "2026-10-12",
+    "valor": 1150000,
+    "metodo": "TARJETA",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 7,
+    "facturaId": 6,
+    "fecha": "2026-11-16",
+    "valor": 105000,
+    "metodo": "NEQUI",
+    "estado": "REVERSADO"
+  },
+  {
+    "id": 8,
+    "facturaId": 7,
+    "fecha": "2026-10-27",
+    "valor": 340000,
+    "metodo": "Efectivo ",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 9,
+    "facturaId": 9,
+    "fecha": "2026-11-07",
+    "valor": 230000,
+    "metodo": "efectivo",
+    "estado": "REVERSADO"
+  },
+  {
+    "id": 10,
+    "facturaId": 9,
+    "fecha": "2026-11-14",
+    "valor": 153000,
+    "metodo": "TARJETA",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 11,
+    "facturaId": 10,
+    "fecha": "2026-10-13",
+    "valor": 720000,
+    "metodo": "efectivo",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 12,
+    "facturaId": 11,
+    "fecha": "2026-11-02",
+    "valor": 635000,
+    "metodo": "EFECTIVO",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 13,
+    "facturaId": 13,
+    "fecha": "2026-10-14",
+    "valor": 715000,
+    "metodo": "transferencia ",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 14,
+    "facturaId": 13,
+    "fecha": "2026-10-22",
+    "valor": 357000,
+    "metodo": "TRANSFERENCIA",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 15,
+    "facturaId": 14,
+    "fecha": "2026-10-17",
+    "valor": 990000,
+    "metodo": "Transferencia",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 16,
+    "facturaId": 15,
+    "fecha": "2026-10-14",
+    "valor": 345000,
+    "metodo": "TARJETA",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 17,
+    "facturaId": 15,
+    "fecha": "2026-10-19",
+    "valor": 172000,
+    "metodo": "transferencia ",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 18,
+    "facturaId": 16,
+    "fecha": "2026-10-20",
+    "valor": 640000,
+    "metodo": "NEQUI",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 19,
+    "facturaId": 16,
+    "fecha": "2026-10-23",
+    "valor": 320000,
+    "metodo": "Efectivo ",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 20,
+    "facturaId": 17,
+    "fecha": "2026-10-19",
+    "valor": 640000,
+    "metodo": "EFECTIVO",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 21,
+    "facturaId": 20,
+    "fecha": "2026-11-11",
+    "valor": 465000,
+    "metodo": "NEQUI",
+    "estado": "REVERSADO"
+  },
+  {
+    "id": 22,
+    "facturaId": 20,
+    "fecha": "2026-11-15",
+    "valor": 310000,
+    "metodo": "EFECTIVO",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 23,
+    "facturaId": 21,
+    "fecha": "2026-10-12",
+    "valor": 200000,
+    "metodo": "nequi",
+    "estado": "REVERSADO"
+  },
+  {
+    "id": 24,
+    "facturaId": 22,
+    "fecha": "2026-11-12",
+    "valor": 645000,
+    "metodo": "tarjeta",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 25,
+    "facturaId": 23,
+    "fecha": "2026-11-12",
+    "valor": 170000,
+    "metodo": "nequi",
+    "estado": "REVERSADO"
+  },
+  {
+    "id": 26,
+    "facturaId": 23,
+    "fecha": "2026-11-16",
+    "valor": 113000,
+    "metodo": "tarjeta",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 27,
+    "facturaId": 24,
+    "fecha": "2026-10-16",
+    "valor": 410000,
+    "metodo": "TRANSFERENCIA",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 28,
+    "facturaId": 24,
+    "fecha": "2026-10-20",
+    "valor": 205000,
+    "metodo": "tarjeta",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 29,
+    "facturaId": 25,
+    "fecha": "2026-10-26",
+    "valor": 625000,
+    "metodo": "TARJETA",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 30,
+    "facturaId": 25,
+    "fecha": "2026-10-27",
+    "valor": 312000,
+    "metodo": "EFECTIVO",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 31,
+    "facturaId": 27,
+    "fecha": "2026-11-04",
+    "valor": 190000,
+    "metodo": "Nequi",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 32,
+    "facturaId": 29,
+    "fecha": "2026-11-02",
+    "valor": 615000,
+    "metodo": "NEQUI",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 33,
+    "facturaId": 29,
+    "fecha": "2026-11-09",
+    "valor": 307000,
+    "metodo": "TARJETA",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 34,
+    "facturaId": 30,
+    "fecha": "2026-11-03",
+    "valor": 1440000,
+    "metodo": "TRANSFERENCIA",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 35,
+    "facturaId": 31,
+    "fecha": "2026-10-31",
+    "valor": 215000,
+    "metodo": "EFECTIVO",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 36,
+    "facturaId": 32,
+    "fecha": "2026-10-28",
+    "valor": 130000,
+    "metodo": "TARJETA",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 37,
+    "facturaId": 33,
+    "fecha": "2026-10-17",
+    "valor": 215000,
+    "metodo": "NEQUI",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 38,
+    "facturaId": 34,
+    "fecha": "2026-11-16",
+    "valor": 650000,
+    "metodo": "NEQUI",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 39,
+    "facturaId": 35,
+    "fecha": "2026-10-13",
+    "valor": 495000,
+    "metodo": "TRANSFERENCIA",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 40,
+    "facturaId": 35,
+    "fecha": "2026-10-19",
+    "valor": 247000,
+    "metodo": "Nequi",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 41,
+    "facturaId": 36,
+    "fecha": "2026-10-22",
+    "valor": 1400000,
+    "metodo": "Efectivo ",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 42,
+    "facturaId": 37,
+    "fecha": "2026-10-07",
+    "valor": 375000,
+    "metodo": "Transferencia",
+    "estado": "REVERSADO"
+  },
+  {
+    "id": 43,
+    "facturaId": 38,
+    "fecha": "2026-11-01",
+    "valor": 740000,
+    "metodo": "NEQUI",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 44,
+    "facturaId": 39,
+    "fecha": "2026-10-18",
+    "valor": 110000,
+    "metodo": "transferencia ",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 45,
+    "facturaId": 40,
+    "fecha": "2026-10-06",
+    "valor": 370000,
+    "metodo": "transferencia ",
+    "estado": "REVERSADO"
+  },
+  {
+    "id": 46,
+    "facturaId": 41,
+    "fecha": "2026-10-03",
+    "valor": 940000,
+    "metodo": "tarjeta",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 47,
+    "facturaId": 42,
+    "fecha": "2026-11-16",
+    "valor": 345000,
+    "metodo": "transferencia ",
+    "estado": "REVERSADO"
+  },
+  {
+    "id": 48,
+    "facturaId": 42,
+    "fecha": "2026-11-16",
+    "valor": 230000,
+    "metodo": "TARJETA",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 49,
+    "facturaId": 43,
+    "fecha": "2026-10-24",
+    "valor": 715000,
+    "metodo": "TARJETA",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 50,
+    "facturaId": 44,
+    "fecha": "2026-10-03",
+    "valor": 360000,
+    "metodo": "TARJETA",
+    "estado": "REVERSADO"
+  },
+  {
+    "id": 51,
+    "facturaId": 45,
+    "fecha": "2026-10-19",
+    "valor": 610000,
+    "metodo": "NEQUI",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 52,
+    "facturaId": 45,
+    "fecha": "2026-10-25",
+    "valor": 305000,
+    "metodo": "NEQUI",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 53,
+    "facturaId": 46,
+    "fecha": "2026-11-16",
+    "valor": 315000,
+    "metodo": "TARJETA",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 54,
+    "facturaId": 49,
+    "fecha": "2026-11-02",
+    "valor": 400000,
+    "metodo": "nequi",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 55,
+    "facturaId": 49,
+    "fecha": "2026-11-06",
+    "valor": 200000,
+    "metodo": "TRANSFERENCIA",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 56,
+    "facturaId": 50,
+    "fecha": "2026-10-18",
+    "valor": 505000,
+    "metodo": "Transferencia",
+    "estado": "REVERSADO"
+  },
+  {
+    "id": 57,
+    "facturaId": 50,
+    "fecha": "2026-10-19",
+    "valor": 336000,
+    "metodo": "Transferencia",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 58,
+    "facturaId": 52,
+    "fecha": "2026-11-02",
+    "valor": 295000,
+    "metodo": "transferencia ",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 59,
+    "facturaId": 52,
+    "fecha": "2026-11-06",
+    "valor": 147000,
+    "metodo": "NEQUI",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 60,
+    "facturaId": 53,
+    "fecha": "2026-10-26",
+    "valor": 130000,
+    "metodo": "TARJETA",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 61,
+    "facturaId": 54,
+    "fecha": "2026-10-22",
+    "valor": 670000,
+    "metodo": "EFECTIVO",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 62,
+    "facturaId": 54,
+    "fecha": "2026-10-28",
+    "valor": 335000,
+    "metodo": "NEQUI",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 63,
+    "facturaId": 55,
+    "fecha": "2026-11-03",
+    "valor": 685000,
+    "metodo": "tarjeta",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 64,
+    "facturaId": 55,
+    "fecha": "2026-11-06",
+    "valor": 342000,
+    "metodo": "Efectivo ",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 65,
+    "facturaId": 56,
+    "fecha": "2026-10-24",
+    "valor": 340000,
+    "metodo": "EFECTIVO",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 66,
+    "facturaId": 60,
+    "fecha": "2026-10-19",
+    "valor": 600000,
+    "metodo": "NEQUI",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 67,
+    "facturaId": 61,
+    "fecha": "2026-11-05",
+    "valor": 810000,
+    "metodo": "tarjeta",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 68,
+    "facturaId": 62,
+    "fecha": "2026-10-12",
+    "valor": 460000,
+    "metodo": "tarjeta",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 69,
+    "facturaId": 62,
+    "fecha": "2026-10-16",
+    "valor": 230000,
+    "metodo": "EFECTIVO",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 70,
+    "facturaId": 63,
+    "fecha": "2026-11-15",
+    "valor": 165000,
+    "metodo": "TRANSFERENCIA",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 71,
+    "facturaId": 63,
+    "fecha": "2026-11-16",
+    "valor": 82000,
+    "metodo": "Nequi",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 72,
+    "facturaId": 64,
+    "fecha": "2026-10-14",
+    "valor": 435000,
+    "metodo": " EFECTIVO",
+    "estado": "REVERSADO"
+  },
+  {
+    "id": 73,
+    "facturaId": 64,
+    "fecha": "2026-10-18",
+    "valor": 290000,
+    "metodo": "EFECTIVO",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 74,
+    "facturaId": 65,
+    "fecha": "2026-10-19",
+    "valor": 535000,
+    "metodo": "tarjeta",
+    "estado": "REVERSADO"
+  },
+  {
+    "id": 75,
+    "facturaId": 65,
+    "fecha": "2026-10-24",
+    "valor": 356000,
+    "metodo": "Efectivo ",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 76,
+    "facturaId": 68,
+    "fecha": "2026-10-15",
+    "valor": 1350000,
+    "metodo": "tarjeta",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 77,
+    "facturaId": 69,
+    "fecha": "2026-11-16",
+    "valor": 615000,
+    "metodo": "TRANSFERENCIA",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 78,
+    "facturaId": 69,
+    "fecha": "2026-11-16",
+    "valor": 307000,
+    "metodo": " EFECTIVO",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 79,
+    "facturaId": 71,
+    "fecha": "2026-11-16",
+    "valor": 55000,
+    "metodo": "EFECTIVO",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 80,
+    "facturaId": 72,
+    "fecha": "2026-11-09",
+    "valor": 270000,
+    "metodo": " EFECTIVO",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 81,
+    "facturaId": 74,
+    "fecha": "2026-10-31",
+    "valor": 690000,
+    "metodo": "EFECTIVO",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 82,
+    "facturaId": 74,
+    "fecha": "2026-11-03",
+    "valor": 345000,
+    "metodo": "tarjeta",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 83,
+    "facturaId": 77,
+    "fecha": "2026-10-13",
+    "valor": 640000,
+    "metodo": "TRANSFERENCIA",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 84,
+    "facturaId": 78,
+    "fecha": "2026-10-16",
+    "valor": 425000,
+    "metodo": "Tarjeta",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 85,
+    "facturaId": 78,
+    "fecha": "2026-10-19",
+    "valor": 212000,
+    "metodo": "TARJETA",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 86,
+    "facturaId": 79,
+    "fecha": "2026-11-06",
+    "valor": 500000,
+    "metodo": "Transferencia",
+    "estado": "REVERSADO"
+  },
+  {
+    "id": 87,
+    "facturaId": 80,
+    "fecha": "2026-11-08",
+    "valor": 160000,
+    "metodo": "efectivo ",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 88,
+    "facturaId": 81,
+    "fecha": "2026-11-08",
+    "valor": 120000,
+    "metodo": "TARJETA",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 89,
+    "facturaId": 82,
+    "fecha": "2026-11-09",
+    "valor": 170000,
+    "metodo": "efectivo ",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 90,
+    "facturaId": 83,
+    "fecha": "2026-11-09",
+    "valor": 120000,
+    "metodo": "TARJETA",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 91,
+    "facturaId": 84,
+    "fecha": "2026-11-15",
+    "valor": 160000,
+    "metodo": "efectivo ",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 92,
+    "facturaId": 85,
+    "fecha": "2026-11-15",
+    "valor": 120000,
+    "metodo": "TARJETA",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 93,
+    "facturaId": 86,
+    "fecha": "2026-11-16",
+    "valor": 170000,
+    "metodo": "efectivo ",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 94,
+    "facturaId": 87,
+    "fecha": "2026-11-16",
+    "valor": 120000,
+    "metodo": "TARJETA",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 95,
+    "facturaId": 88,
+    "fecha": "2026-11-11",
+    "valor": 200000,
+    "metodo": "",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 96,
+    "facturaId": 89,
+    "fecha": "2026-11-12",
+    "valor": 130000,
+    "metodo": "NEQUI",
+    "estado": "APLICADO"
+  },
+  {
+    "id": 97,
+    "facturaId": 79,
+    "fecha": "2026-11-16",
+    "valor": 500000,
+    "metodo": "Efectivo",
+    "estado": "REVERSADO"
+  },
+  {
+    "id": 98,
+    "facturaId": 79,
+    "fecha": "2026-11-16",
+    "valor": 2500000,
+    "metodo": "Efectivo",
+    "estado": "REVERSADO"
+  }
+]
